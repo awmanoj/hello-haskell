@@ -4,6 +4,9 @@ collatz x
     | even x = x : collatz (x `div` 2)
     | odd x  = x : collatz (x*3 + 1)
 
+longCollatz = length (filter isLong (map collatz [1..100]))
+    where isLong x = length x > 15
+
 -- *Main> collatz 13
 -- [13,40,20,10,5,16,8,4,2,1]
 -- *Main> collatz 15
