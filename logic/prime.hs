@@ -12,3 +12,10 @@ isPrime n
     | n < 1 = error "not a positive integer"
     | n == 1 = False
     | otherwise = ld n == n
+
+factors' :: Integer -> [Integer]
+factors' n = 1 : factors'' n
+    where factors'' n 
+            | n < 1 = error "not a positive integer"
+            | n == 1 = []
+            | otherwise = p : factors'' (div n p) where p = ld n
