@@ -19,3 +19,7 @@ factors' n = 1 : factors'' n
             | n < 1 = error "not a positive integer"
             | n == 1 = []
             | otherwise = p : factors'' (div n p) where p = ld n
+
+years' = [(a, b, y) | y <- [1982..], a <- [1..100], b <- [1..100], a < b, isPrime a == True, isPrime b == True, a*b == y]
+
+
